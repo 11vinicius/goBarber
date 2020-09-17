@@ -1,11 +1,14 @@
+import 'reflect-metadata';
+
 import express from 'express';
-import appointmentsRouter from './appointments.routes'
+import appointmentsRouter from './routes/appointments.routes';
+import './database';
 
 const app = express();
 
-app.use(express.json())
-app.use('/appointments',appointmentsRouter);
+app.use(express.json());
+app.use('/appointments', appointmentsRouter);
 
-app.listen(3333,()=>{
-    console.log('ok');
-})
+app.listen(3333, () => {
+  console.log('ok');
+});
