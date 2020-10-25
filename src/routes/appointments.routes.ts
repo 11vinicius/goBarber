@@ -16,19 +16,15 @@ appointmentsRouter.get('/', async (request, response) => {
 });
 
 appointmentsRouter.post('/', async (request, response) => {
-  try {
-    const { provider_id, date } = request.body;
-    const parseDate = parseISO(date);
-    const createAppointment = new CreateAppointmentServices();
+  const { provider_id, date } = request.body;
+  const parseDate = parseISO(date);
+  const createAppointment = new CreateAppointmentServices();
 
-    const appointment = await createAppointment.execute({
-      date: parseDate,
-      provider_id,
-    });
-    return response.json(appointment);
-  } catch (error) {
-    return response.status(400).json({ error: error.message });
-  }
+  const appointment = await createAppointment.execute({
+    date: parseDate,
+    provider_id,
+  });
+  return response.json(appointment);
 });
 
 export default appointmentsRouter;
