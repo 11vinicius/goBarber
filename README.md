@@ -3,11 +3,10 @@
 </h1>
 
 ## Indice
+
 - [sobre](#-sobre)
 - [tecnologias utilizadas](#-Tecnologias-utilizadas)
 - [como baixar](#-Como-baixar-o-projeto)
-
-
 
 ---
 
@@ -40,6 +39,9 @@ o foi desenvolvida utilizando as seguinte tecnologias.
 
 #Instalar as dependencias
   $ yarn install
+
+#criar banco de dados
+ $ docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 
 #Iniciar projeto
   $ yarn start
